@@ -9,3 +9,4 @@ Telas não feitas: Perfil, Telas dos produtos
 
 *Estou tentando fazer a conexão do banco de dados pelo PHP MyAdmin, caso não dê certo irei tentar com o Firebase.
 
+obs: Código está na Branch "codigo" 
