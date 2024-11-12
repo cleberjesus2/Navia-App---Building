@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="container">
+    <img src="assets/imagens/navia2.png" alt="Logo" class="logo" />
+    <h1>Bem vindo à Navia</h1>
+    <p>Entre para acessar sua jornada sustentável</p>
+
+    <ion-item>
+      <ion-input  placeholder="Digite seu número de telefone ou email" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Senha" type="password"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="login-button">Login</ion-button>
+
+    <div class="forgot-password">
+      <a style="color: #038000; font-size: 20px;" href="#">Esqueceu sua senha?</a>
+    </div>
+
+    <ion-button expand="block" fill="outline" class="google-button">
+      <ion-icon name="logo-google" slot="start"></ion-icon>
+      Login com o Google
+    </ion-button>
+
+    <div class="register-link">
+      <a style="color: #038000; font-size: 20px;" href="#">Ainda não tem conta? Cadastre-se</a>
+    </div>
+  </div>
+</ion-content>

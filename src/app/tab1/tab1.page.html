@@ -1,0 +1,225 @@
+<ion-menu side="start" content-id="main-content">
+  <ion-header >
+    <ion-toolbar style="background-color: #224D53;" >
+      <ion-title>Menu </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/tab1">Home</ion-item>
+      <ion-item routerLink="/tab2">Explorar</ion-item>
+      <ion-item routerLink="/tab3">Configurações</ion-item>
+      <ion-item routerLink="Notificações">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/sininho.png" alt="sino" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Notificações
+      </ion-item>
+      
+      <ion-item routerLink="Localizações">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/localizacao.png" alt="Localização" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Localizações
+      </ion-item>
+      
+      <ion-item routerLink="Configurações">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/configuracao.png" alt="Configurações" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Configurações
+      </ion-item>
+      
+      <ion-label class="topicos">Recursos informativos</ion-label>
+      
+      <ion-item routerLink="Dicas Sustentáveis">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/dica.png" alt="Dicas Sustentáveis" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Dicas Sustentáveis
+      </ion-item>
+      
+      <ion-item routerLink="Recomendações">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/recomendacao.png" alt="Recomendações" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Recomendações
+      </ion-item>
+      
+      <ion-label class="topicos">Funcionalidades</ion-label>
+      
+      <ion-item routerLink="Favoritos">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/favorito.png" alt="Favoritos" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Favoritos
+      </ion-item>
+      
+      <ion-item routerLink="Histórico de Atividades">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/historico.png" alt="Histórico de Atividades" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Histórico de Atividades
+      </ion-item>
+      
+      <ion-item routerLink="Crie seu evento">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/evento.png" alt="Crie seu evento" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Crie seu evento
+      </ion-item>
+      
+      <ion-item routerLink="Anúncie seu produto">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/anuncio.png" alt="Anúncie seu produto" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Anúncie seu produto
+      </ion-item>
+
+      
+      <ion-item routerLink="Feedback">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/feedback.png" alt="Feedback" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Feedback
+      </ion-item>
+      
+      <ion-label class="topicos">Suporte</ion-label>
+      
+      <ion-item routerLink="Sobre o App">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/sobre.png" alt="Sobre o App" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Sobre o App
+      </ion-item>
+      
+      <ion-item routerLink="Política de Privacidade e Termos de Uso">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/politica.png" alt="Política de Privacidade e Termos de Uso" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Política de Privacidade e Termos de Uso
+      </ion-item>
+      
+      <ion-item routerLink="Ajuda e suporte">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/ajuda.png" alt="Ajuda e suporte" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Ajuda e suporte
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div id="main-content">
+  <ion-header  [translucent]="true" style="color: #E1E1E1 ;">
+    <ion-toolbar style="background-color: #E1E1E1 ;">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <div class="barra">
+      <ion-title id="titulo-menu">Eventos</ion-title>
+      <img id="logo" width="72px" src="assets/imagens/navia-logo.png" alt="" srcset="">
+    </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <!-- Barra de pesquisa -->
+    <ion-searchbar id="pesquisa" placeholder="Eventos e Locais"></ion-searchbar>
+  
+    <!-- Seção: Eventos de Coleta -->
+    <h3 class="titulo-secao">Eventos de Coleta</h3>
+    <div class="carousel-container">
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let evento of eventosColeta">
+          <img [src]="evento.imagem" alt="{{ evento.nome }}" class="slide-image" (click)="verEvento(evento)">
+          <h2 class="slide-title">{{ evento.nome }}</h2>
+          <div class="evento-info">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>{{ evento.data }}</span>
+          </div>
+          <div class="evento-info">
+            <ion-icon name="location-outline"></ion-icon>
+            <span>{{ evento.endereco }}</span>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <!-- Seção: Eventos de Reciclagem -->
+    <h3 class="titulo-secao">Eventos de Reciclagem</h3>
+    <div class="carousel-container">
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let evento of eventosReciclagem">
+          <img [src]="evento.imagem" alt="{{ evento.nome }}" class="slide-image" (click)="verEvento(evento)">
+          <h2 class="slide-title">{{ evento.nome }}</h2>
+          <div class="evento-info">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>{{ evento.data }}</span>
+          </div>
+          <div class="evento-info">
+            <ion-icon name="location-outline"></ion-icon>
+            <span>{{ evento.endereco }}</span>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <!-- Seção: Troca de Produtos Sustentáveis -->
+    <h3 class="titulo-secao">Troca de Produtos Sustentáveis</h3>
+    <div class="carousel-container">
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let evento of eventosTroca">
+          <img [src]="evento.imagem" alt="{{ evento.nome }}" class="slide-image" (click)="verEvento(evento)">
+          <h2 class="slide-title">{{ evento.nome }}</h2>
+          <div class="evento-info">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>{{ evento.data }}</span>
+          </div>
+          <div class="evento-info">
+            <ion-icon name="location-outline"></ion-icon>
+            <span>{{ evento.endereco }}</span>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <!-- Seção: Palestras -->
+    <h3 class="titulo-secao">Palestras</h3>
+    <div class="carousel-container">
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let evento of eventosPalestras">
+          <img [src]="evento.imagem" alt="{{ evento.nome }}" class="slide-image" (click)="verEvento(evento)">
+          <h2 class="slide-title">{{ evento.nome }}</h2>
+          <div class="evento-info">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>{{ evento.data }}</span>
+          </div>
+          <div class="evento-info">
+            <ion-icon name="location-outline"></ion-icon>
+            <span>{{ evento.endereco }}</span>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <!-- Seção: Feira de Produtos Naturais e Orgânicos -->
+    <h3 class="titulo-secao">Feira de Produtos Naturais e Orgânicos</h3>
+    <div class="carousel-container">
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let evento of eventosFeira">
+          <img [src]="evento.imagem" alt="{{ evento.nome }}" class="slide-image" (click)="verEvento(evento)">
+          <h2 class="slide-title">{{ evento.nome }}</h2>
+          <div class="evento-info">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>{{ evento.data }}</span>
+          </div>
+          <div class="evento-info">
+            <ion-icon name="location-outline"></ion-icon>
+            <span>{{ evento.endereco }}</span>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </ion-content>
+  

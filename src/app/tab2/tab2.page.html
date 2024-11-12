@@ -1,0 +1,249 @@
+<ion-menu side="start" content-id="main-content">
+  <ion-header >
+    <ion-toolbar style="background-color: #224D53;" >
+      <ion-title>Menu </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+         <ion-item routerLink="Notificações">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/sininho.png" alt="sino" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Notificações
+      </ion-item>
+      
+      <ion-item routerLink="Localizações">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/localizacao.png" alt="Localização" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Localizações
+      </ion-item>
+      
+      <ion-item routerLink="Configurações">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/configuracao.png" alt="Configurações" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Configurações
+      </ion-item>
+      
+      <ion-label class="topicos">Recursos informativos</ion-label>
+      
+      <ion-item routerLink="Dicas Sustentáveis">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/dica.png" alt="Dicas Sustentáveis" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Dicas Sustentáveis
+      </ion-item>
+      
+      <ion-item routerLink="Recomendações">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/recomendacao.png" alt="Recomendações" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Recomendações
+      </ion-item>
+      
+      <ion-label class="topicos">Funcionalidades</ion-label>
+      
+      <ion-item routerLink="Favoritos">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/favorito.png" alt="Favoritos" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Favoritos
+      </ion-item>
+      
+      <ion-item routerLink="Histórico de Atividades">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/historico.png" alt="Histórico de Atividades" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Histórico de Atividades
+      </ion-item>
+      
+      <ion-item routerLink="Crie seu evento">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/evento.png" alt="Crie seu evento" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Crie seu evento
+      </ion-item>
+      
+      <ion-item routerLink="Anúncie seu produto">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/anuncio.png" alt="Anúncie seu produto" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Anúncie seu produto
+      </ion-item>
+
+      
+      <ion-item routerLink="Feedback">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/feedback.png" alt="Feedback" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Feedback
+      </ion-item>
+      
+      <ion-label class="topicos">Suporte</ion-label>
+      
+      <ion-item routerLink="Sobre o App">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/sobre.png" alt="Sobre o App" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Sobre o App
+      </ion-item>
+      
+      <ion-item routerLink="Política de Privacidade e Termos de Uso">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/politica.png" alt="Política de Privacidade e Termos de Uso" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Política de Privacidade e Termos de Uso
+      </ion-item>
+      
+      <ion-item routerLink="Ajuda e suporte">
+        <ion-avatar class="icons-item">
+          <img src="assets/imagens/ajuda.png" alt="Ajuda e suporte" style="width: 24px; height: 24px;">
+        </ion-avatar>
+        Ajuda e suporte
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div id="main-content">
+  <ion-header  [translucent]="true" style="color: #E1E1E1 ;">
+    <ion-toolbar style="background-color: #E1E1E1 ;">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <div class="barra">
+      <ion-title id="titulo-menu">Market</ion-title>
+      <img id="logo" width="72px" src="assets/imagens/navia-logo.png" alt="" srcset="">
+    </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-grid>
+      <ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <h2 class="market-title">Produtos Disponíveis</h2>
+          </ion-col>
+        </ion-row>
+  
+        <!-- Primeira linha de produtos -->
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/imagens/produtos/escova-de-dentes.jpg" class="product-image" alt="Imagem do Produto">
+            <ion-card-header>
+              <ion-card-title>Escova de dentes</ion-card-title>
+              <ion-card-subtitle>Preço: R$XX,XX</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="primary" (click)="goToProductDetail(1)">Comprar</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/imagens/produtos/cosmeticos.jpg" class="product-image" alt="Imagem do Produto">
+            <ion-card-header>
+              <ion-card-title>Kit de cosméticos</ion-card-title>
+              <ion-card-subtitle>Preço: R$XX,XX</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="primary" (click)="goToProductDetail(2)">Comprar</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  
+      <!-- Segunda linha de produtos -->
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/imagens/produtos/garrafadeagua.jpg" class="product-image" alt="Imagem do Produto">
+            <ion-card-header>
+              <ion-card-title>Garrafa térmica</ion-card-title>
+              <ion-card-subtitle>Preço: R$XX,XX</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="primary" (click)="goToProductDetail(3)">Comprar</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/imagens/produtos/coporeutilizavel.jpg" class="product-image" alt="Imagem do Produto">
+            <ion-card-header>
+              <ion-card-title>Copos reutilizáveis</ion-card-title>
+              <ion-card-subtitle>Preço: R$XX,XX</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="primary" (click)="goToProductDetail(4)">Comprar</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  
+      <!-- Terceira linha de produtos -->
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/imagens/produtos/ecobag.avif" class="product-image" alt="Imagem do Produto">
+            <ion-card-header>
+              <ion-card-title>Ecobag</ion-card-title>
+              <ion-card-subtitle>Preço: R$XX,XX</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="primary" (click)="goToProductDetail(5)">Comprar</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/imagens/produtos/utensilios.avif" class="product-image" alt="Imagem do Produto">
+            <ion-card-header>
+              <ion-card-title>Utensílios de cozinha</ion-card-title>
+              <ion-card-subtitle>Preço: R$XX,XX</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="primary" (click)="goToProductDetail(6)">Comprar</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  
+      <!-- Quarta linha de produtos -->
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/imagens/produtos/saco.jpg" class="product-image" alt="Imagem do Produto">
+            <ion-card-header>
+              <ion-card-title>Sacola</ion-card-title>
+              <ion-card-subtitle>Preço: R$XX,XX</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="primary" (click)="goToProductDetail(7)">Comprar</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/imagens/produtos/oleo.jpg" class="product-image" alt="Imagem do Produto">
+            <ion-card-header>
+              <ion-card-title>Óleo natural</ion-card-title>
+              <ion-card-subtitle>Preço: R$XX,XX</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="primary" (click)="goToProductDetail(8)">Comprar</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+  </ion-content>
+  

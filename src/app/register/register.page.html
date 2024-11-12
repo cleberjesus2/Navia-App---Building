@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="register-container">
+    <img src="assets/imagens/navia-logo.png" alt="Logo Navia" class="logo" />
+    <h2>Crie sua conta</h2>
+    <p>Insira os detalhes para começar!</p>
+
+    <!-- Nome Completo -->
+    <ion-item>
+      <ion-label position="floating">Nome Completo</ion-label>
+      <ion-input type="text" [(ngModel)]="registerData.nome" required></ion-input>
+    </ion-item>
+
+    <!-- Número de Telefone -->
+    <ion-item>
+      <ion-label position="floating">Número de Telefone</ion-label>
+      <ion-input type="tel" [(ngModel)]="registerData.telefone" required></ion-input>
+    </ion-item>
+
+    <!-- Email -->
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="registerData.email" required></ion-input>
+    </ion-item>
+
+    <!-- Senha -->
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="registerData.senha" required></ion-input>
+    </ion-item>
+
+    <!-- Confirmar Senha -->
+    <ion-item>
+      <ion-label position="floating">Confirmar Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="registerData.confirmarSenha" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="primary" (click)="register()">Inscreva-se</ion-button>
+
+    <p class="login-link">Já tem uma conta? <a href="/login">Faça login</a></p>
+  </div>
+</ion-content>
+
+

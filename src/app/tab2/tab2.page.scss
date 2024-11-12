@@ -1,0 +1,25 @@
+
+ ion-content {
+    --background: #f0f0f0; // Substitua pelo código de cor desejado
+  }
+
+  .barra{
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .market-title{
+    color: black;
+  }
+
+  .product-image {
+    width: 100%;  // Usa toda a largura disponível do card
+    height: auto; // Mantém a proporção da imagem
+    max-height: 120px; // Define uma altura máxima para evitar que fique muito grande
+    object-fit: cover; // Cobre o espaço mantendo a proporção
+    margin: 0 auto;
+    display: block;
+  }
+
+  

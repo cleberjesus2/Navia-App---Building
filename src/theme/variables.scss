@@ -1,0 +1,11 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+ion-toolbar {
+    --background: #224D53; // Substitua pela cor desejada
+  }
+
+  :root {
+  --ion-color-primary: #224D53; // Cor global para o tema 'primary'
+  --ion-toolbar-background: #224D53; // Cor de fundo global para as toolbars
+}
