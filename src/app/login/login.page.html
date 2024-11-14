@@ -7,30 +7,36 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="container">
     <img src="assets/imagens/navia2.png" alt="Logo" class="logo" />
-    <h1>Bem vindo à Navia</h1>
+    <h1>Bem-vindo à Navia</h1>
     <p>Entre para acessar sua jornada sustentável</p>
 
+    <!-- Campo de email ou telefone -->
     <ion-item>
-      <ion-input  placeholder="Digite seu número de telefone ou email" type="tel"></ion-input>
+      <ion-input [(ngModel)]="email" placeholder="Digite seu número de telefone ou email" type="email"></ion-input>
     </ion-item>
 
+    <!-- Campo de senha -->
     <ion-item>
-      <ion-input placeholder="Senha" type="password"></ion-input>
+      <ion-input [(ngModel)]="senha" placeholder="Senha" type="password"></ion-input>
     </ion-item>
 
-    <ion-button expand="block" class="login-button">Login</ion-button>
+    <!-- Botão de login -->
+    <ion-button expand="block" class="login-button" (click)="login()">Login</ion-button>
 
+    <!-- Link para recuperação de senha -->
     <div class="forgot-password">
       <a style="color: #038000; font-size: 20px;" href="#">Esqueceu sua senha?</a>
     </div>
 
+    <!-- Botão de login com Google -->
     <ion-button expand="block" fill="outline" class="google-button">
       <ion-icon name="logo-google" slot="start"></ion-icon>
       Login com o Google
     </ion-button>
 
+    <!-- Link para cadastro -->
     <div class="register-link">
-      <a style="color: #038000; font-size: 20px;" href="#">Ainda não tem conta? Cadastre-se</a>
+      <a (click)="goToRegister()" style="color: #038000; font-size: 20px;">Ainda não tem conta? Cadastre-se</a>
     </div>
   </div>
 </ion-content>

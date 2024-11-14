@@ -120,8 +120,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-   
+  <ion-content fullscreen="true">
+    <div class="profile-container">
+      <div class="profile-picture">
+        <img src="assets/imagens/user.png" alt="Foto de Perfil">
+      </div>
+      <div class="profile-info">
+        <h2>{{ userName }}</h2>
+        <p>{{ userEmail }}</p>
+      </div>
+    </div>
   </ion-content>
   
   

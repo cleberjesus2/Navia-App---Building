@@ -4,31 +4,30 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    redirectTo: 'login',  // Redirecionamento para a tela de login ao acessar a raiz
+    pathMatch: 'full',
   },
   {
-    path: 'login',
+    path: 'login',  // Rota para a página de login
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
-    path: 'register',
+    path: 'register',  // Rota para a página de registro
     loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
   },
   {
-    path: 'tabs',
+    path: 'tabs',  // Rota para as tabs, a tela principal após o login
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  
-  { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule) },
-  // Outras rotas
-  // Outras rotas
+  {
+    path: '**',  // Rota de fallback, caso a URL seja inválida
+    redirectTo: 'login', 
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })  // Carregamento antecipado dos módulos
   ],
   exports: [RouterModule]
 })

@@ -1,46 +1,52 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
+import { ServiceProviderService } from '../service-provider.service'; 
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
-  templateUrl: 'register.page.html',
-  styleUrls: ['register.page.scss'],
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
+  nome: string = '';
+  telefone: string = '';
+  email: string = '';
+  senha: string = '';
+  confirmarSenha: string = '';
 
-  // Objeto para armazenar os dados do formulário
-  registerData = {
-    nome: '',
-    telefone: '',
-    email: '',
-    senha: '',
-    confirmarSenha: ''
-  };
+  constructor(private navCtrl: NavController, private serviceProvider: ServiceProviderService) {}
 
-  constructor(private http: HttpClient, private navCtrl: NavController) {}
-
-  // Função de cadastro
   register() {
-    // Verifique se as senhas coincidem
-    if (this.registerData.senha !== this.registerData.confirmarSenha) {
-      alert('As senhas não coincidem!');
+    if (this.senha !== this.confirmarSenha) {
+      alert('As senhas não coincidem');
       return;
     }
 
-    // Enviar os dados para o backend
-    this.http.post('http://localhost/app/register.php', this.registerData, {
-      headers: { 'Content-Type': 'application/json' }
-    }).subscribe(
-      (response) => {
-        console.log('Usuário cadastrado:', response);
-        alert('Cadastro realizado com sucesso!');
-        this.navCtrl.navigateForward('/login');  // Redireciona para a página de login após o sucesso
+    const postData = {
+      nome: this.nome,
+      telefone: this.telefone,
+      email: this.email,
+      senha: this.senha
+    };
+
+    this.serviceProvider.register(postData).subscribe(
+      response => {
+        console.log(response);
+        if (response.status === "sucesso") {
+          this.navCtrl.navigateRoot('/tabs');
+        } else {
+          alert(response.mensagem);
+        }
       },
-      (error) => {
-        console.error('Erro ao cadastrar:', error);
-        alert('Erro ao cadastrar, tente novamente!');
+      error => {
+        console.error('Erro na requisição', error);
+        alert('Erro ao registrar usuário');
       }
     );
+  }
+
+  goToLogin() {
+    this.navCtrl.navigateBack('/login');
   }
 }
